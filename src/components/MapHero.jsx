@@ -1,5 +1,6 @@
 import MapDetails from "./MapDetails";
 import map from "../assets/map.png";
+import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
 export default function MapHero() {
@@ -19,9 +20,11 @@ export default function MapHero() {
           <div className="bg-white h-[70px] w-[1px]"></div>
           <MapDetails main="Time Spent" text="00:00:00" />
         </div>
-        <div className="bg-[#8E2BE2] p-4 rounded-full cursor-pointer hover:-translate-y-[1px] active:translate-y-[1px] transition-all duration-100 ease">
-          <FaArrowRight size={35} />
-        </div>
+        <Link>
+          <div className="bg-[#8E2BE2] p-4 rounded-full cursor-pointer hover:-translate-y-[1px] active:translate-y-[1px] transition-all duration-100 ease">
+            <FaArrowRight size={35} />
+          </div>
+        </Link>
       </div>
     </>
   );
