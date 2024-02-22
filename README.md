@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+=======
 
 # LocateNow - Your Real-Time Location Tracker
 
@@ -26,3 +36,4 @@ LocateNow is your go-to destination for real-time location tracking, providing a
 **Get Started Today:**
 
 Sign up for a free account on LocateNow and take control of your tracking needs with ease. Whether it's for personal or business use, LocateNow empowers you to stay connected and informed, wherever life takes you.
+>>>>>>> 20fd727cb96d408e2880712968aa72906d4131cd
