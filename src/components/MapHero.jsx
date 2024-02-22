@@ -6,9 +6,11 @@ import { FaArrowRight } from "react-icons/fa";
 export default function MapHero() {
   return (
     <>
-      <div className="h-[290px] overflow-hidden rounded-2xl">
-        <img className="w-full h-full object-cover" src={map} alt="map" />
-      </div>
+      <Link to="/map">
+        <div className="h-[290px] overflow-hidden rounded-2xl">
+          <img className="w-full h-full object-cover" src={map} alt="map" />
+        </div>
+      </Link>
       <div className="w-[947px] bg-[#282828] text-white py-5 px-3 rounded-full flex items-center justify-between mx-auto -translate-y-16">
         <div className="flex items-center justify-evenly w-full">
           <MapDetails

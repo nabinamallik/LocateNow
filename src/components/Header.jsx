@@ -1,4 +1,5 @@
 import { MdOutlineSearch } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -14,7 +15,9 @@ export default function Header() {
             />
           </div>
         </div>
-        <p className="font-semibold uppercase text-2xl">LocateMe</p>
+        <Link to="/">
+          <p className="font-semibold uppercase text-2xl">LocateMe</p>
+        </Link>
         <div className="w-[55px] h-[55px] rounded-full overflow-hidden">
           <img
             className="w-full h-full"
