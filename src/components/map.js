@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
+// Import the custom marker icon image
+import markerIcon from './/resources/location.png';
+
 const Map = ({ location }) => {
   const mapRef = useRef(null);
 
@@ -13,13 +16,22 @@ const Map = ({ location }) => {
       mapRef.current.setView([location.lat, location.lng]);
     }
 
-    L.marker([location.lat, location.lng]).addTo(mapRef.current)
+    // Define custom marker icon
+    const customIcon = L.icon({
+      iconUrl: markerIcon,
+      iconSize: [32, 32],
+      iconAnchor: [16, 32],
+      popupAnchor: [0, -32]
+    });
+
+    // Add marker with custom icon
+    L.marker([location.lat, location.lng], { icon: customIcon }).addTo(mapRef.current)
       .bindPopup('Your Location')
       .openPopup();
   }, [location]);
 
   return (
-    <div id="map" style={{ height: '400px', width: '100%' }}></div>
+    <div id="map" style={{ height: '600px', width: '100%' }}></div>
   );
 };
 

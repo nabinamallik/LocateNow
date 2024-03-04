@@ -1,5 +1,6 @@
 
 import "./navbar.css"
+import { Link } from "react-router-dom"
 function Navbar() {
   return (
     <header class="header">
@@ -8,7 +9,9 @@ function Navbar() {
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
-        <li><a id='login' href="#">Login</a></li>
+        <li>
+          <a id="login">Login</a>
+          </li>
       </ul>
     </header> 
 
