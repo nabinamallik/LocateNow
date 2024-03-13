@@ -26,11 +26,24 @@ a {
 }
 
 #login{
+	padding: unset;
     font-weight: 900;
     color: #16a68c;
 }
-
-
+ul li{
+	display: flex;
+	align-items: center;
+}
+#input{
+	height: 25px;
+	border-radius: 10px;
+	border-color: #2d4b68;
+	border-width: 1px;
+}
+#input::placeholder{
+	padding-left: 1rem;
+	color: rgb(74, 74, 136);
+}
 
 .logo {
 	margin: 0;
@@ -62,7 +75,9 @@ a {
 
 
 .header {
+	z-index: 999;
     display: flex;
+	width: 100%;
     flex-direction: row;
     justify-content: space-between;
 	padding-top: .5em;

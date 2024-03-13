@@ -1,7 +1,7 @@
 import './profile.css'
 
 
-function Profile() {
+function Profile({close}) {
   return (
     <section className="main">
   <div className="profile-card">

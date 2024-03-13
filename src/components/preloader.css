@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+  }
+  
+ 
+  
+  body {
+    min-height: 100vh;
+    background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+    display: grid;
+    place-items: center;
+  }
+  
+  @property --a {
+    initial-value: 0deg;
+    inherits: false;
+    syntax: '<angle>';
+  }
+  
+  @property --h {
+    initial-value: 0;
+    inherits: false;
+    syntax: '<number>';
+  }
+  
+  .loader {
+    padding: 2rem 4rem;
+    font-family: monospace;
+    font-weight: bold;
+    color: hsl(0, 0%, 100%);
+    border-style: solid;
+    border-width: 1vmin;
+    font-size: 2rem;
+    --charge: hsl(calc(var(--h, 0) * 1), 80%, 50%);
+    border-image: conic-gradient(var(--charge) var(--a), transparent calc(var(--a) + 0.5deg)) 30;
+    animation: load 2s infinite ease-in-out;
+  }
+  
+  @keyframes load {
+    0%, 10% {
+      --a: 0deg;
+      --h: 0;
+    }
+    100% {
+      --a: 360deg;
+      --h: 100;
+    }
+  }
+  
+  

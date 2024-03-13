@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import Navbar from './navbar';
 
 // Import the custom marker icon image
 import markerIcon from './/resources/location.png';
@@ -26,12 +27,12 @@ const Map = ({ location }) => {
 
     // Add marker with custom icon
     L.marker([location.lat, location.lng], { icon: customIcon }).addTo(mapRef.current)
-      .bindPopup('Your Location')
+      .bindPopup(`Your Location`)
       .openPopup();
   }, [location]);
 
   return (
-    <div id="map" style={{ height: '600px', width: '100%' }}></div>
+    <div id="map" style={{  paddingTop:'1rem' ,height: '100vh', width: '100%', overflow: 'hidden'}}></div>
   );
 };
 
@@ -55,6 +56,7 @@ const LiveLocationMap = () => {
 
   return (
     <div>
+      <Navbar/>
       <Map location={location} />
     </div>
   );

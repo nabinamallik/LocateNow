@@ -1,34 +1,37 @@
-import './loginsignup.css'
 import { useState } from 'react';
+import './loginsignup.css'
+import Map from './map'
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { Navigate } from 'react-router-dom';
 
-function Signup({ register }) { // Changed prop name to 'register'
-  const [username, setUsername] = useState('');
+function Signup() {
+  const [username, setUser] = useState("");
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [password, setPass] = useState('');
+  const navigate = useNavigate()
 
-  const registerClick = () => {
-    // Capture form data
-    const data = {
-      username: username,
-      email: email,
-      password: password
-    };
-    // Call register function with form data
-    register(data); // Changed from 'onSignup' to 'register'
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    axios.post("http://localhost:5000/signup", {username, email, password})
+    .then(result =>{console.log(result)
+      navigate(<Map/>)
+    })
+    .catch(err => console.log(err))
   };
-
+  
   return (
     <div className="container">
       <div className="registration form">
         <header>Signup</header>
-        <form action="#">
-          <input type="text" name='username' value={username} onChange={(e) => setUsername(e.target.value)} required placeholder="Enter your name"/>
-          <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required placeholder="Enter your email"/>
-          <input type="password" name='password' value={password} onChange={(e) => setPassword(e.target.value)} required placeholder="Create your password"/>
-          <input type="button" onClick={registerClick} className="button" value="Signup"/>
+        <form onSubmit={handleSubmit}>
+          <input type="text" name='username'  required placeholder="Enter your name" onChange={(e)=> setUser(e.target.value)} />
+          <input type="email" name="email"  required placeholder="Enter your email" onChange={(e)=> setEmail(e.target.value)}/>
+          <input type="password" name='password' required placeholder="Create your password" onChange={(e)=> setPass(e.target.value)}/>
+          <input type="submit" className="button" value="Signup"/>
         </form>
         <div className="signup">
-          <span className="signup">Already have an account? <a href='#'>Login</a></span>
+          <span className="signup">Already have an account? <a href='#'><Link to="/login">Login</Link></a></span>
         </div>
       </div>
     </div>
