@@ -3,7 +3,7 @@ import './loginsignup.css'
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-
+import Map from "./map";
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPass] = useState('');
@@ -14,7 +14,7 @@ function Login() {
     axios.post("http://localhost:5000/login", {email, password})
     .then(result =>{console.log(result)
       if(result.data === "Success"){
-        navigate('/home')
+        navigate(<Map/>);
       } else{
         alert(result.data)
       }
