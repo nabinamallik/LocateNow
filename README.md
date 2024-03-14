@@ -26,4 +26,3 @@ LocateNow is your go-to destination for real-time location tracking, providing a
 **Get Started Today:**
 
 Sign up for a free account on LocateNow and take control of your tracking needs with ease. Whether it's for personal or business use, LocateNow empowers you to stay connected and informed, wherever life takes you.
->>>>>>> 20fd727cb96d408e2880712968aa72906d4131cd
