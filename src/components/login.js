@@ -9,7 +9,7 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("https://locate-now.vercel.app/login", { email, password })
+    axios.post("/login", { email, password })
       .then(result => {
         console.log(result);
         if (result.data === "Success") {
