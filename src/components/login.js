@@ -9,11 +9,11 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("/login", { email, password })
+    axios.post("https://locate-now.vercel.app/login", { email, password })
       .then(result => {
         console.log(result);
         if (result.data === "Success") {
-          navigate('/home'); // Navigate to the '/map' route upon successful login
+          navigate('https://locate-now.vercel.app/home'); // Navigate to the '/map' route upon successful login
         } else {
           alert(result.data);
         }
