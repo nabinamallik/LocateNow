@@ -24,11 +24,11 @@ app.post('https://locate-now.vercel.app/login', (req, res) =>{
   })
 })
 
-app.post('https://locate-now.vercel.app//signup', (req, res) => {
+app.post('https://locate-now.vercel.app/signup', (req, res) => {
   User.create(req.body)
   .then(user => res.json(user))
   .catch(err => res.json(err))
 })
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on https://locate-now.vercel.app/:${PORT}`);
 });
