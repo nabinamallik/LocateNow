@@ -17,11 +17,11 @@ ul {
 
 h2,
 h3,
-a {
+.link {
 	color: #34495e;
 }
 
-a {
+.link {
 	text-decoration: none;
 }
 

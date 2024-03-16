@@ -32,7 +32,7 @@ const Map = ({ location }) => {
   }, [location]);
 
   return (
-    <div id="map" style={{  paddingTop:'1rem' ,height: '100vh', width: '100%', overflow: 'hidden'}}></div>
+    <div id="map" style={{ paddingTop:'1rem', height: '100vh', width: '100%', overflow: 'hidden'}}></div>
   );
 };
 
@@ -54,10 +54,24 @@ const LiveLocationMap = () => {
     return () => navigator.geolocation.clearWatch(geoId);
   }, []);
 
+  const refreshLocation = () => {
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        setLocation({
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        });
+      },
+      error => console.error(error),
+      { enableHighAccuracy: true }
+    );
+  };
+
   return (
     <div>
       <Navbar/>
       <Map location={location} />
+      <button className="refresh-btn" onClick={refreshLocation} style={{position: 'fixed', left:"10px", bottom:"10px", zIndex:'999'}}>Refresh</button>
     </div>
   );
 };
