@@ -11,10 +11,10 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("https://locate-now.vercel.app//signup", { username, email, password })
+    axios.post("https://locate-now.vercel.app/signup", { username, email, password })
       .then(result => {
         console.log(result);
-        navigate('https://locate-now.vercel.app//home'); // Navigate to the '/map' route upon successful signup
+        navigate('https://locate-now.vercel.app/home'); // Navigate to the '/map' route upon successful signup
       })
       .catch(err => console.log(err));
   };
@@ -30,7 +30,7 @@ function Signup() {
           <input type="submit" className="button" value="Signup" />
         </form>
         <div className="signup">
-          <span className="signup">Already have an account? <Link style={{ textDecoration: 'none', color: '#000' }}  to="/">Login</Link></span>
+          <span className="signup">Already have an account? <Link style={{ textDecoration: 'none', color: '#000' }}  to="https://locate-now.vercel.app/login">Login</Link></span>
         </div>
       </div>
     </div>
