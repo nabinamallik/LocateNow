@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './loginsignup.css';
+import Map from './map';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -14,7 +15,7 @@ function Signup() {
     axios.post("/signup", { username, email, password })
       .then(result => {
         console.log(result);
-        navigate('/home'); // Navigate to the '/map' route upon successful signup
+        navigate(<Map/>); // Navigate to the '/map' route upon successful signup
       })
       .catch(err => console.log(err));
   };
