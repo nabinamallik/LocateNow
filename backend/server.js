@@ -8,7 +8,7 @@ app.use(express.json())
 app.use(cors());
 mongoose.connect('mongodb+srv://nabinamallik2003:nabinamallik2003@cluster0.epiqhjz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {dbName: 'LocateNow', useNewUrlParser: true,useUnifiedTopology: true,});
 
-app.post('/login', (req, res) =>{
+app.post('https://locate-now.vercel.app/login', (req, res) =>{
   const {email, password} = req.body;
   User.findOne({email: email})
   .then(user =>{
