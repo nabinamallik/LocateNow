@@ -24,7 +24,7 @@ app.post('/login', (req, res) =>{
   })
 })
 
-app.post('/signup', (req, res) => {
+app.post('https://locate-now.vercel.app/signup', (req, res) => {
   User.create(req.body)
   .then(user => res.json(user))
   .catch(err => res.json(err))
