@@ -9,6 +9,7 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    navigate('/home');
     axios.post("/login", { email, password })
       .then(result => {
         console.log(result);
