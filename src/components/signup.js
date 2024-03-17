@@ -3,7 +3,7 @@ import './loginsignup.css';
 import Map from './map';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+const navigate = useNavigate();
 function Signup() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState('');
@@ -11,7 +11,7 @@ function Signup() {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault();navigate(<Map/>); axios.post("/signup", { username, email, password })
+    e.preventDefault(); navigate(<Map/>); axios.post("/signup", { username, email, password })
       .then(result => {
         console.log(result);
         navigate(<Map/>); // Navigate to the '/map' route upon successful signup
