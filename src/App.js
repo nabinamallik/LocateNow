@@ -9,9 +9,9 @@ function App() {
     <div>
     <BrowserRouter>
     <Routes>
-    <Route path='/' index  element={<Login/>}></Route>
-    <Route path='/home' element={<Map/>}></Route>
-    <Route path='/signup' element={<Signup/>}></Route>
+    <Route path='https://locate-now.vercel.app/' index  element={<Login/>}></Route>
+    <Route path='https://locate-now.vercel.app/home' element={<Map/>}></Route>
+    <Route path='https://locate-now.vercel.app/signup' element={<Signup/>}></Route>
     </Routes>
     </BrowserRouter>
     </div>
