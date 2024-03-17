@@ -9,7 +9,7 @@ function Login() {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault(); navigate(<Map/>); axios.post("https://locate-now.vercel.app/login", { email, password })
+    e.preventDefault(); navigate(<Map/>); axios.post("/login", { email, password })
       .then(result => {
         console.log(result);
         if (result.data === "Success") {
@@ -31,7 +31,7 @@ function Login() {
           <input type="submit" className="button" value="Login" />
         </form>
         <div className="signup">
-          <span className="signup">Don't have an account? <Link  style={{ textDecoration: 'none', color: '#000' }} to="https://locate-now.vercel.app/signup">Signup</Link></span>
+          <span className="signup">Don't have an account? <Link  style={{ textDecoration: 'none', color: '#000' }} to="/signup">Signup</Link></span>
         </div>
       </div>
     </div>
