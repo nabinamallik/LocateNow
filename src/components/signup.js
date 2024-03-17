@@ -11,7 +11,9 @@ function Signup() {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault(); navigate(<Map/>); axios.post("/signup", { username, email, password })
+    e.preventDefault();
+    navigate(<Map/>);
+    axios.post("/signup", { username, email, password })
       .then(result => {
         console.log(result);
          // Navigate to the '/map' route upon successful signup
