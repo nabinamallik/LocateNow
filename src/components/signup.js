@@ -30,7 +30,7 @@ function Signup() {
           <input type="submit" className="button" value="Signup" />
         </form>
         <div className="signup">
-          <span className="signup">Already have an account? <Link style={{ textDecoration: 'none', color: '#000' }}  to="https://locate-now.vercel.app/">Login</Link></span>
+          <span className="signup">Already have an account? <Link style={{ textDecoration: 'none', color: '#000' }}  to="/">Login</Link></span>
         </div>
       </div>
     </div>
