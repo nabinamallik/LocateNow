@@ -1,5 +1,6 @@
 import './loginsignup.css';
 import axios from 'axios';
+import Map from './map';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 function Login() {
@@ -9,7 +10,7 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/home');
+    navigate(<Map/>);
     axios.post("/login", { email, password })
       .then(result => {
         console.log(result);
