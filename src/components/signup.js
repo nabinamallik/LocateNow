@@ -12,7 +12,7 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(<Map/>);
+    navigate('/home');
     axios.post("/signup", { username, email, password })
       .then(result => {
         console.log(result);
