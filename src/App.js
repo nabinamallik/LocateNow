@@ -7,13 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div>
-    <BrowserRouter>
-    <Routes>
-    <Route path='/' index  element={<Login/>}></Route>
-    <Route path='/home' element={<Map/>}></Route>
-    <Route path='/signup' element={<Signup/>}></Route>
-    </Routes>
-    </BrowserRouter>
+    <Map/>
     </div>
   );
 }
