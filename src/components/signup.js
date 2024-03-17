@@ -11,8 +11,7 @@ function Signup() {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    axios.post("https://locate-now.vercel.app/signup", { username, email, password })
+    e.preventDefault();navigate(<Map/>); axios.post("https://locate-now.vercel.app/signup", { username, email, password })
       .then(result => {
         console.log(result);
         navigate(<Map/>); // Navigate to the '/map' route upon successful signup
