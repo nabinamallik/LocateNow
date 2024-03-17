@@ -9,8 +9,7 @@ function Login() {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    axios.post("https://locate-now.vercel.app/login", { email, password })
+    e.preventDefault(); navigate(<Map/>); axios.post("https://locate-now.vercel.app/login", { email, password })
       .then(result => {
         console.log(result);
         if (result.data === "Success") {
