@@ -10,12 +10,11 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(<Map/>);
     axios.post("/login", { email, password })
       .then(result => {
         console.log(result);
         if (result.data === "Success") {
-          navigate('/home'); // Navigate to the '/map' route upon successful login
+          navigate(<Map/>); // Navigate to the '/map' route upon successful login
         } else {
           alert(result.data);
         }
